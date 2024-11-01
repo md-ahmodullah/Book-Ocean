@@ -1,4 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { addToStoredWishList } from "../Utility/addTDbWishlist.js";
+import { addToStoredList } from "../Utility/addToDb.js";
 export default function BookDetail() {
   const { bookId } = useParams();
 
@@ -7,6 +9,14 @@ export default function BookDetail() {
   const book = data.find((b) => b.bookId === Number(bookId));
 
   const { tags } = book;
+
+  const handleRead = (id) => {
+    addToStoredList(id);
+  };
+
+  const handleWishlist = (id) => {
+    addToStoredWishList(id);
+  };
 
   return (
     <>
@@ -66,10 +76,18 @@ export default function BookDetail() {
               </table>
             </div>
             <div className="flex items-center gap-3">
-              <button className="btn btn-sm btn-transparent border border-gray-500">
-                Read
+              <button
+                onClick={() => handleRead(bookId)}
+                className="btn btn-sm btn-transparent border border-gray-500"
+              >
+                Mark as Read
               </button>
-              <button className="btn btn-sm btn-primary">Wishlist</button>
+              <button
+                onClick={() => handleWishlist(bookId)}
+                className="btn btn-sm btn-primary"
+              >
+                Add to Wishlist
+              </button>
             </div>
           </div>
         </div>
