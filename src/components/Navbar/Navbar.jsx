@@ -42,7 +42,7 @@ export default function Navbar() {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn btn-success">Sign Up</a>
+        <a className="btn btn-primary">Sign Up</a>
       </div>
     </div>
   );
