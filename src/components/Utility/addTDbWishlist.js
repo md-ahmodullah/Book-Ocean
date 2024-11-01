@@ -1,4 +1,4 @@
-const getStoredList = () => {
+const getStoredWishList = () => {
   const storedListStr = localStorage.getItem("wishlist");
   if (storedListStr) {
     const storedList = JSON.parse(storedListStr);
@@ -9,7 +9,7 @@ const getStoredList = () => {
 };
 
 const addToStoredWishList = (id) => {
-  const storedList = getStoredList();
+  const storedList = getStoredWishList();
   if (storedList.includes(id)) {
     console.log(id, "Already Exists!");
   } else {
@@ -19,4 +19,4 @@ const addToStoredWishList = (id) => {
   }
 };
 
-export { addToStoredWishList, getStoredList };
+export { addToStoredWishList, getStoredWishList };
