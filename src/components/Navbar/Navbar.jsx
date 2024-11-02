@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import logo from "../../../public/book.ico";
 export default function Navbar() {
   const links = (
     <>
@@ -7,7 +8,7 @@ export default function Navbar() {
     </>
   );
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-100 pt-5">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -28,18 +29,21 @@ export default function Navbar() {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow gap-3"
           >
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">Book Ocean</a>
+        <img src={logo} alt="" className="w-5 md:flex md:w-7" />
+        <a className="btn btn-ghost text-2xl md:text-3xl font-bold">
+          Book Oceano
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 space-x-10">{links}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn btn-primary">Sign Up</a>
+        <a className="btn btn-md btn-primary">Sign Up</a>
       </div>
     </div>
   );

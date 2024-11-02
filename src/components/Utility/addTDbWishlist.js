@@ -12,12 +12,12 @@ const getStoredWishList = () => {
 const addToStoredWishList = (id) => {
   const storedList = getStoredWishList();
   if (storedList.includes(id)) {
-    toast.error("Already Added this Book.");
+    toast.error("Already exists in your Wishlist!");
   } else {
     storedList.push(id);
     const storedListStr = JSON.stringify(storedList);
     localStorage.setItem("wishlist", storedListStr);
-    toast.success("Successfully Added this book!");
+    toast.success("Successfully Added to your Wishlist!");
   }
 };
 

@@ -39,7 +39,7 @@ export default function ListedBooks() {
           <h2 className="text-2xl text-blue-300 font-bold text-center my-5">
             You have read: {readBooks.length} books yet
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-10 mt-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10 mt-4">
             {readBooks.map((book) => (
               <Book key={book.bookId} book={book} />
             ))}
@@ -47,9 +47,9 @@ export default function ListedBooks() {
         </TabPanel>
         <TabPanel>
           <h2 className="text-2xl text-blue-300 font-bold text-center my-5">
-            Your Wishlist : {wishBooks.length} books added.
+            Your Wishlist : {wishBooks.length} books added
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-10 mt-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10 mt-4">
             {wishBooks.map((book) => (
               <Book key={book.bookId} book={book} />
             ))}

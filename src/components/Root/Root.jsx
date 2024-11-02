@@ -4,7 +4,7 @@ import Navbar from "../Navbar/Navbar";
 
 export default function Root() {
   return (
-    <section className="w-10/12 mx-auto">
+    <section className="w-11/12 mx-auto">
       <Navbar />
       <Outlet></Outlet>
       <Footer />

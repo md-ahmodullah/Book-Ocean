@@ -24,7 +24,7 @@ export default function BookDetail() {
         <div className="hero-content flex-col lg:flex-row gap-8">
           <img
             src={book.image}
-            className="max-w-sm rounded-lg shadow-2xl bg-blue-200 p-16"
+            className="max-h-[300px] md:max-h-[500px] lg:h-full w-full rounded-lg shadow-2xl bg-blue-200 p-5"
           />
           <div className="space-y-3">
             <h1 className="text-2xl font-bold">{book.bookName}</h1>
@@ -34,7 +34,7 @@ export default function BookDetail() {
                 {book.category}
               </p>
             </div>
-            <p className="py-2 text-sm">
+            <p className="py-2 text-sm text-justify">
               <span className="text-base font-bold text-gray-300">Review:</span>{" "}
               {book.review}
             </p>

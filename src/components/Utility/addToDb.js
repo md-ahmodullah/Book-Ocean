@@ -12,12 +12,12 @@ const getStoredList = () => {
 const addToStoredList = (id) => {
   const storedList = getStoredList();
   if (storedList.includes(id)) {
-    toast.error("Already Added this Book.");
+    toast.error("Already exists in Read List!");
   } else {
     storedList.push(id);
     const storedListStr = JSON.stringify(storedList);
     localStorage.setItem("read-list", storedListStr);
-    toast.success("Successfully Added this book!");
+    toast.success("Successfully Added to your Read List!");
   }
 };
 
