@@ -3,11 +3,13 @@ import { useLoaderData } from "react-router-dom";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import Book from "../Book/Book.jsx";
+import SortBy from "../SortBy/SortBy.jsx";
 import { getStoredWishList } from "../Utility/addTDbWishlist.js";
 import { getStoredList } from "../Utility/addToDb.js";
 export default function ListedBooks() {
   const [readBooks, setReadBooks] = useState([]);
   const [wishBooks, setwishBooks] = useState([]);
+  const [sort, setSort] = useState("");
   const allBooks = useLoaderData();
   useEffect(() => {
     const storedReadList = getStoredList();
@@ -26,6 +28,19 @@ export default function ListedBooks() {
     );
     setwishBooks(wishlist);
   }, []);
+
+  const handleSort = (type) => {
+    if (type === "Rating") {
+      setSort(type);
+      setReadBooks(readBooks.sort((a, b) => b.rating - a.rating));
+      setwishBooks(wishBooks.sort((a, b) => b.rating - a.rating));
+    }
+    if (type === "Pages") {
+      setSort(type);
+      setReadBooks(readBooks.sort((a, b) => b.totalPages - a.totalPages));
+      setwishBooks(wishBooks.sort((a, b) => b.totalPages - a.totalPages));
+    }
+  };
   return (
     <>
       <h2 className="text-3xl my-8">Listed Books</h2>
@@ -34,6 +49,8 @@ export default function ListedBooks() {
           <Tab>Read List</Tab>
           <Tab>Wish List</Tab>
         </TabList>
+
+        <SortBy sort={sort} onSort={handleSort} />
 
         <TabPanel>
           <h2 className="text-2xl text-blue-300 font-bold text-center my-5">

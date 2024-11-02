@@ -23,6 +23,9 @@ export default function Book({ book }) {
         </div>
         <h2 className="card-title">{book.bookName}</h2>
         <p className="text-lg font-semibold">By : {book.author}</p>
+        <p className="text-base font-bold text-gray-500">
+          Total Pages : {book.totalPages}
+        </p>
         <div className="flex justify-between items-center border-t-2 border-dashed border-gray-700 pt-5">
           <p className="text-base">{book.category}</p>
           <p className="text-base">Rating: {book.rating}</p>
